@@ -1,6 +1,8 @@
 var s1={};
 s1.stk=new Array(10);
 s1.sp=10;
+s1.push=push;
+s1.pop=pop;
 
 s1.getDataString=function () {
     var s="";
@@ -16,7 +18,7 @@ view=function () {
 }
 
 //Push functionality
-s1.push=function(v){
+function push(v){
     if(v!=""){
         if(this.sp==0){
             document.getElementById("stackMessage").innerHTML="Stack is full! No more push Possible";
@@ -36,7 +38,7 @@ function pushHandler() {
 }
 
 //POP functionality
-s1.pop=function(){
+function pop(){
     if(this.sp==10){
         document.getElementById("stackMessage").innerHTML="Stack is Empty - Nothing to POP";
     }else{
