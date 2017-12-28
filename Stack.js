@@ -34,3 +34,20 @@ function pushHandler() {
     document.getElementById("stackinput").value="";
     // document.getElementById("stackMessage").innerHTML="You Pushed "+in1.value;
 }
+
+//POP functionality
+s1.pop=function(){
+    if(this.sp==10){
+        document.getElementById("stackMessage").innerHTML="Stack is Empty - Nothing to POP";
+    }else{
+        var temp=this.stk[this.sp];
+        this.sp=this.sp+1;
+        document.getElementById("stackMessage").innerHTML="You Popped "+temp;
+        return temp;
+    }
+};
+function popHandler() {
+    var popvalue=s1.pop();
+    view();
+    // document.getElementById("stackMessage").innerHTML="You Popped "+popvalue;
+}
